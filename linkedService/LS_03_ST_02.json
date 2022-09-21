@@ -1,0 +1,17 @@
+{
+	"name": "LS_03_ST_02",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"connectionString": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "LS_01_KV_01",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "secretforst02"
+			}
+		}
+	}
+}
