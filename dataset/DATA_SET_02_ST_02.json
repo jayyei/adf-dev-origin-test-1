@@ -1,0 +1,20 @@
+{
+	"name": "DATA_SET_02_ST_02",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_03_ST_02",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
