@@ -1,5 +1,5 @@
 {
-	"name": "data_set_02_st_02",
+	"name": "DATA_SET_02_ST_02",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_03_ST_02",
