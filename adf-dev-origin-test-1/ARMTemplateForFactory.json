@@ -6,6 +6,18 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "adf-dev-origin-test-1"
+		},
+		"LS_01_KV_01_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://kv-build-adf-test-01.vault.azure.net/"
+		},
+		"LS_02_ST_01_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "secretforstoragedev01"
+		},
+		"LS_03_ST_02_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "secretforst02"
 		}
 	},
 	"variables": {
@@ -114,63 +126,6 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/LS_01_KV_01')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureKeyVault",
-				"typeProperties": {
-					"baseUrl": "https://kv-build-adf-test-01.vault.azure.net/"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_02_ST_01')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": {
-						"type": "AzureKeyVaultSecret",
-						"store": {
-							"referenceName": "LS_01_KV_01",
-							"type": "LinkedServiceReference"
-						},
-						"secretName": "secretforstoragedev01"
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_01_KV_01')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_03_ST_02')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": {
-						"type": "AzureKeyVaultSecret",
-						"store": {
-							"referenceName": "LS_01_KV_01",
-							"type": "LinkedServiceReference"
-						},
-						"secretName": "secretforst02"
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_01_KV_01')]"
-			]
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/DATA_SET_02_ST_02')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -194,6 +149,63 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/LS_03_ST_02')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_01_KV_01')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureKeyVault",
+				"typeProperties": {
+					"baseUrl": "[parameters('LS_01_KV_01_properties_typeProperties_baseUrl')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_02_ST_01')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": {
+						"type": "AzureKeyVaultSecret",
+						"store": {
+							"referenceName": "LS_01_KV_01",
+							"type": "LinkedServiceReference"
+						},
+						"secretName": "[parameters('LS_02_ST_01_properties_typeProperties_connectionString_secretName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/LS_01_KV_01')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_03_ST_02')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": {
+						"type": "AzureKeyVaultSecret",
+						"store": {
+							"referenceName": "LS_01_KV_01",
+							"type": "LinkedServiceReference"
+						},
+						"secretName": "[parameters('LS_03_ST_02_properties_typeProperties_connectionString_secretName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/LS_01_KV_01')]"
 			]
 		}
 	]

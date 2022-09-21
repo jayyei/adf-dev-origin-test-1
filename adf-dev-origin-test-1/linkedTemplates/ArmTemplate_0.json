@@ -6,6 +6,18 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "adf-dev-origin-test-1"
+		},
+		"LS_01_KV_01_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://kv-build-adf-test-01.vault.azure.net/"
+		},
+		"LS_02_ST_01_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "secretforstoragedev01"
+		},
+		"LS_03_ST_02_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "secretforst02"
 		}
 	},
 	"variables": {
@@ -20,7 +32,7 @@
 				"annotations": [],
 				"type": "AzureKeyVault",
 				"typeProperties": {
-					"baseUrl": "https://kv-build-adf-test-01.vault.azure.net/"
+					"baseUrl": "[parameters('LS_01_KV_01_properties_typeProperties_baseUrl')]"
 				}
 			},
 			"dependsOn": []
@@ -39,7 +51,7 @@
 							"referenceName": "LS_01_KV_01",
 							"type": "LinkedServiceReference"
 						},
-						"secretName": "secretforstoragedev01"
+						"secretName": "[parameters('LS_02_ST_01_properties_typeProperties_connectionString_secretName')]"
 					}
 				}
 			},
@@ -61,7 +73,7 @@
 							"referenceName": "LS_01_KV_01",
 							"type": "LinkedServiceReference"
 						},
-						"secretName": "secretforst02"
+						"secretName": "[parameters('LS_03_ST_02_properties_typeProperties_connectionString_secretName')]"
 					}
 				}
 			},

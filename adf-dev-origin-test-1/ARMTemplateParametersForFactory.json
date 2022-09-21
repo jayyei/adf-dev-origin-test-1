@@ -4,6 +4,15 @@
 	"parameters": {
 		"factoryName": {
 			"value": "adf-dev-origin-test-1"
+		},
+		"LS_01_KV_01_properties_typeProperties_baseUrl": {
+			"value": "https://kv-build-adf-test-01.vault.azure.net/"
+		},
+		"LS_02_ST_01_properties_typeProperties_connectionString_secretName": {
+			"value": "secretforstoragedev01"
+		},
+		"LS_03_ST_02_properties_typeProperties_connectionString_secretName": {
+			"value": "secretforst02"
 		}
 	}
 }
