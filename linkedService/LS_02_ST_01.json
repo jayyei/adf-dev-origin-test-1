@@ -10,7 +10,7 @@
 					"referenceName": "LS_01_KV_01",
 					"type": "LinkedServiceReference"
 				},
-				"secretName": "secretforstoragedev01"
+				"secretName": "secretforst02"
 			}
 		}
 	}
