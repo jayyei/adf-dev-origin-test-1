@@ -6,10 +6,6 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "adf-dev-origin-test-1"
-		},
-		"LS_01_KV_01_properties_typeProperties_baseUrl": {
-			"type": "secureString",
-			"metadata": "Secure string for 'baseUrl' of 'LS_01_KV_01'"
 		}
 	},
 	"variables": {
@@ -151,7 +147,7 @@
 				"annotations": [],
 				"type": "AzureKeyVault",
 				"typeProperties": {
-					"baseUrl": "[parameters('LS_01_KV_01_properties_typeProperties_baseUrl')]"
+					"baseUrl": "https://kv-build-adf-test-01.vault.azure.net/"
 				}
 			},
 			"dependsOn": []
@@ -170,7 +166,7 @@
 							"referenceName": "LS_01_KV_01",
 							"type": "LinkedServiceReference"
 						},
-						"secretName": "secretforstoragedev01"
+						"secretName": "secretforst01"
 					}
 				}
 			},
@@ -193,28 +189,6 @@
 							"type": "LinkedServiceReference"
 						},
 						"secretName": "secretforst02"
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_01_KV_01')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_04_ST_01')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": {
-						"type": "AzureKeyVaultSecret",
-						"store": {
-							"referenceName": "LS_01_KV_01",
-							"type": "LinkedServiceReference"
-						},
-						"secretName": "secretforstoragedev01"
 					}
 				}
 			},
