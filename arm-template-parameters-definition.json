@@ -78,6 +78,21 @@
             }
         }
     },
+    "Microsoft.DataFactory/factories/linkedServices": {
+        "AzureKeyVault": {
+            "properties": {
+                "typeProperties": {
+                    "baseUrl": "|:baseUrl:secureString"
+                },
+                "parameters": {
+                    "KeyVaultURL": {
+                        "type": "=",
+                        "defaultValue": "|:defaultValue:secureString"
+                    }
+                }
+            }
+        }
+    },
     "Microsoft.DataFactory/factories/datasets": {
         "*": {
             "properties": {
