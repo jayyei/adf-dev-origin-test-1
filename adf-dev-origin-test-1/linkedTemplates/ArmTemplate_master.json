@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_04_ST_01'"
 		},
+		"LS_01_KV_01_properties_typeProperties_baseUrl": {
+			"type": "secureString",
+			"metadata": "Secure string for 'baseUrl' of 'LS_01_KV_01'"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -40,6 +44,9 @@
 					},
 					"LS_04_ST_01_connectionString": {
 						"value": "[parameters('LS_04_ST_01_connectionString')]"
+					},
+					"LS_01_KV_01_properties_typeProperties_baseUrl": {
+						"value": "[parameters('LS_01_KV_01_properties_typeProperties_baseUrl')]"
 					}
 				}
 			},

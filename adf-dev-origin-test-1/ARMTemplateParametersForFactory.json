@@ -7,6 +7,9 @@
 		},
 		"LS_04_ST_01_connectionString": {
 			"value": ""
+		},
+		"LS_01_KV_01_properties_typeProperties_baseUrl": {
+			"value": ""
 		}
 	}
 }

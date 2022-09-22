@@ -10,6 +10,10 @@
 		"LS_04_ST_01_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_04_ST_01'"
+		},
+		"LS_01_KV_01_properties_typeProperties_baseUrl": {
+			"type": "secureString",
+			"metadata": "Secure string for 'baseUrl' of 'LS_01_KV_01'"
 		}
 	},
 	"variables": {
@@ -151,7 +155,7 @@
 				"annotations": [],
 				"type": "AzureKeyVault",
 				"typeProperties": {
-					"baseUrl": "https://kv-build-adf-test-01.vault.azure.net/"
+					"baseUrl": "[parameters('LS_01_KV_01_properties_typeProperties_baseUrl')]"
 				}
 			},
 			"dependsOn": []
