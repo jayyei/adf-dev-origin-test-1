@@ -6,6 +6,10 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "adf-dev-origin-test-1"
+		},
+		"LS_04_ST_01_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_04_ST_01'"
 		}
 	},
 	"variables": {
@@ -88,7 +92,7 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "LS_02_ST_01",
+					"referenceName": "LS_04_ST_01",
 					"type": "LinkedServiceReference"
 				},
 				"annotations": [],
@@ -110,7 +114,7 @@
 				]
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_02_ST_01')]"
+				"[concat(variables('factoryId'), '/linkedServices/LS_04_ST_01')]"
 			]
 		},
 		{
@@ -195,6 +199,22 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/LS_01_KV_01')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_04_ST_01')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": {
+						"type": "SecureString",
+						"value": "[parameters('LS_04_ST_01_connectionString')]"
+					}
+				}
+			},
+			"dependsOn": []
 		}
 	]
 }
