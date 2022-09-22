@@ -8,16 +8,8 @@
 			"defaultValue": "adf-dev-origin-test-1"
 		},
 		"LS_01_KV_01_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://kv-build-adf-test-01.vault.azure.net/"
-		},
-		"LS_02_ST_01_properties_typeProperties_connectionString_secretName": {
-			"type": "string",
-			"defaultValue": "secretforstoragedev01"
-		},
-		"LS_03_ST_02_properties_typeProperties_connectionString_secretName": {
-			"type": "string",
-			"defaultValue": "secretforst02"
+			"type": "secureString",
+			"metadata": "Secure string for 'baseUrl' of 'LS_01_KV_01'"
 		},
 		"containerUri": {
 			"type": "string",
@@ -48,12 +40,6 @@
 					},
 					"LS_01_KV_01_properties_typeProperties_baseUrl": {
 						"value": "[parameters('LS_01_KV_01_properties_typeProperties_baseUrl')]"
-					},
-					"LS_02_ST_01_properties_typeProperties_connectionString_secretName": {
-						"value": "[parameters('LS_02_ST_01_properties_typeProperties_connectionString_secretName')]"
-					},
-					"LS_03_ST_02_properties_typeProperties_connectionString_secretName": {
-						"value": "[parameters('LS_03_ST_02_properties_typeProperties_connectionString_secretName')]"
 					}
 				}
 			},
