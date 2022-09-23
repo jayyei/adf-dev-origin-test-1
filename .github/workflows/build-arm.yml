@@ -1,0 +1,14 @@
+on: push
+jobs:
+
+  build-arm-template:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Install node
+        run: |
+          sudo apt install nodejs
+          node -v
