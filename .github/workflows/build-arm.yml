@@ -33,13 +33,15 @@ jobs:
           git config --global user.name "jayyei"
           git config --global user.email "sanchezrj0328@gmail.com"
           git stash
-          git checkout -b release-template
           git fetch
-          git branch --set-upstream-to=origin/release-template release-template
-          git config pull.rebase true
-          git pull
-          git add build/armTemplate/
-          git status
-          git commit -m "save arm-template"
-          git push
+          git branch -v -a
+
+          # git checkout -b release-template
+          # git branch --set-upstream-to=origin/release-template release-template
+          # git config pull.rebase true
+          # git pull
+          # git add build/armTemplate/
+          # git status
+          # git commit -m "save arm-template"
+          # git push
           
