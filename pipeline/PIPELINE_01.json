@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data of  two storages",
+				"name": "Copy data of  two storagesn test for pipeline",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
