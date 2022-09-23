@@ -35,6 +35,7 @@ jobs:
           git config --global user.email "sanchezrj0328@gmail.com"
           ls
           mv -f build/ tmpBuild/
+          rm -rf build
           ls
           # git stash
           # git fetch
