@@ -29,7 +29,7 @@ jobs:
               ### 'run build export $(Build.Repository.LocalPath)/<Root-folder-from-Git-configuration-settings-in-ADF> /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/<Your-ResourceGroup-Name>/providers/Microsoft.DataFactory/factories/<Your-Factory-Name> "ArmTemplate"'
               npm run build export ../ /subscriptions/05f19a32-57e6-4417-9d59-5e348bb90a19/resourceGroups/rg-build-adf-test-1/providers/Microsoft.DataFactory/factories/adf-dev-origin-test-1 armTemplate
       
-      - name: Save ARM template in repo
+      - name: Save ARM template in repository
         run: |
           git config --global user.name "jayyei"
           git config --global user.email "sanchezrj0328@gmail.com"
@@ -41,9 +41,8 @@ jobs:
           mv -f armTemplate build/armTemplate
           git add build/armTemplate/
           git status
-          # git status
-          # git commit -m "save arm-template"
-          # git push
+          git commit -m "save arm-template"
+          git push
 
           # find tmpBuild -type f -print0 | xargs -0 mv -f build/armTemplate
           # find tmpBuild -maxdepth 1 -type f -print0 | xargs -0 mv -f build
