@@ -50,37 +50,6 @@
             "dependsOn": []
         },
         {
-            "name": "[concat(parameters('factoryName'), '/DATA_SET_01_ST_01')]",
-            "type": "Microsoft.DataFactory/factories/datasets",
-            "apiVersion": "2018-06-01",
-            "properties": {
-                "linkedServiceName": {
-                    "referenceName": "LS_04_ST_01",
-                    "type": "LinkedServiceReference"
-                },
-                "annotations": [],
-                "type": "DelimitedText",
-                "typeProperties": {
-                    "location": {
-                        "type": "AzureBlobStorageLocation",
-                        "fileName": "test.txt",
-                        "container": "input"
-                    },
-                    "columnDelimiter": ";",
-                    "escapeChar": "\\",
-                    "quoteChar": "\""
-                },
-                "schema": [
-                    {
-                        "type": "String"
-                    }
-                ]
-            },
-            "dependsOn": [
-                "[concat(variables('factoryId'), '/linkedServices/LS_04_ST_01')]"
-            ]
-        },
-        {
             "name": "[concat(parameters('factoryName'), '/LS_02_ST_01')]",
             "type": "Microsoft.DataFactory/factories/linkedServices",
             "apiVersion": "2018-06-01",
@@ -122,6 +91,37 @@
             },
             "dependsOn": [
                 "[concat(variables('factoryId'), '/linkedServices/LS_01_KV_01')]"
+            ]
+        },
+        {
+            "name": "[concat(parameters('factoryName'), '/DATA_SET_01_ST_01')]",
+            "type": "Microsoft.DataFactory/factories/datasets",
+            "apiVersion": "2018-06-01",
+            "properties": {
+                "linkedServiceName": {
+                    "referenceName": "LS_02_ST_01",
+                    "type": "LinkedServiceReference"
+                },
+                "annotations": [],
+                "type": "DelimitedText",
+                "typeProperties": {
+                    "location": {
+                        "type": "AzureBlobStorageLocation",
+                        "fileName": "test.txt",
+                        "container": "input"
+                    },
+                    "columnDelimiter": ";",
+                    "escapeChar": "\\",
+                    "quoteChar": "\""
+                },
+                "schema": [
+                    {
+                        "type": "String"
+                    }
+                ]
+            },
+            "dependsOn": [
+                "[concat(variables('factoryId'), '/linkedServices/LS_02_ST_01')]"
             ]
         },
         {
