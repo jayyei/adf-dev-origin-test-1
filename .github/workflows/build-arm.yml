@@ -35,14 +35,11 @@ jobs:
           git config --global user.email "sanchezrj0328@gmail.com"
           mv -f build/ tmpBuild/
           rm -rf build
-          ls
           git stash
           git fetch
           git checkout -t origin/release-template
-          git status
           mv -f tmpBuild/ build/
           rm -rf tmpBuild/
-          git status
           ls
           # git add build/armTemplate/
           # git status
