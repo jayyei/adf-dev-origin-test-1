@@ -16,7 +16,7 @@ jobs:
           sudo apt install nodejs
           node -v
 
-      - name: install dependencies and build
+      - name: install dependencies and build ARM template
         working-directory: ./build
         run: | 
               node --version
@@ -28,7 +28,7 @@ jobs:
               
               ### 'run build export $(Build.Repository.LocalPath)/<Root-folder-from-Git-configuration-settings-in-ADF> /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/<Your-ResourceGroup-Name>/providers/Microsoft.DataFactory/factories/<Your-Factory-Name> "ArmTemplate"'
               npm run build export ../ /subscriptions/05f19a32-57e6-4417-9d59-5e348bb90a19/resourceGroups/rg-build-adf-test-1/providers/Microsoft.DataFactory/factories/adf-dev-origin-test-1 armTemplate
-      - name: Check the repo
+      - name: Save ARM template in repo
         run: |
           git config --global user.name "jayyei"
           git config --global user.email "sanchezrj0328@gmail.com"
@@ -36,6 +36,7 @@ jobs:
           git fetch
           git branch -v -a
           git switch release-template
+          git status
 
           # git checkout -b release-template
           # git branch --set-upstream-to=origin/release-template release-template
