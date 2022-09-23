@@ -33,14 +33,14 @@ jobs:
         run: |
           git config --global user.name "jayyei"
           git config --global user.email "sanchezrj0328@gmail.com"
-          mv -f build/armTemplate tmpBuild/
+          mv -f build/armTemplate armTemplate/
           git stash
           git fetch
           git checkout -t origin/release-template
           rm -rf build
-          ls 
+          mv -f armTemplate build/
           echo "space"
-          ls tmpBuild
+          ls 
           # git status
           # git add build/armTemplate/
           # git status
