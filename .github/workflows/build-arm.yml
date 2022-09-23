@@ -41,6 +41,7 @@ jobs:
           git fetch
           git checkout -t origin/release-template
           git status
+          mv -f tmpBuild build/
           # git add build/armTemplate/
           # git status
           # git commit -m "save arm-template"
