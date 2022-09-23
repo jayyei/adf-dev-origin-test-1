@@ -35,6 +35,7 @@ jobs:
           git stash
           git fetch
           git branch -v -a
+          git switch release-template
 
           # git checkout -b release-template
           # git branch --set-upstream-to=origin/release-template release-template
