@@ -30,4 +30,6 @@ jobs:
           git branch
           git add build/armTemplate/
           git status
+          git commit -m "saving arm-template"
+          git push origin release:release-template
           
