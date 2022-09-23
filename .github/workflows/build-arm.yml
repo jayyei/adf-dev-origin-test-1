@@ -37,9 +37,9 @@ jobs:
           git stash
           git fetch
           git checkout -t origin/release-template
-          # find tmpBuild -type f -print0 | xargs -0 mv -t build
+          find tmpBuild -type f -print0 | xargs -0 mv -f build
           # mv -f tmpBuild/ build/
-          ls build
+          ls 
           # git status
           # git add build/armTemplate/
           # git status
