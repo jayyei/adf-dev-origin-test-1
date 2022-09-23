@@ -20,7 +20,7 @@ template.resources = templateWithoutServices
 console.log("Overriding template")
 var jsonToWrite = JSON.stringify(template, null, 2)
 
-fs.writeFile('./armTemplate/ARMTemplateForFactory.json', jsonToWrite, (err) => {
+fs.writeFile('./armTemplate/ARMTemplateForFactoryNoLSv1.json', jsonToWrite, (err) => {
   if (err) throw err
   console.log('Linked Services were succesfully removed')
 })
