@@ -12,3 +12,12 @@ jobs:
         run: |
           sudo apt install nodejs
           node -v
+
+      - name: install dependencies and build
+        working-directory: ./build
+        run: | 
+              node --version
+              npm --version
+              npm install
+              npm run build validate ../ /subscriptions/05f19a32-57e6-4417-9d59-5e348bb90a19/resourceGroups/adf-rg/providers/Microsoft.DataFactory/factories/adf-dev-with-git-actions
+              npm run build export ../ /subscriptions/05f19a32-57e6-4417-9d59-5e348bb90a19/resourceGroups/adf-rg/providers/Microsoft.DataFactory/factories/adf-dev-with-git-actions armTemplate
