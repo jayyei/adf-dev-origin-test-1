@@ -33,9 +33,9 @@ jobs:
         run: |
           git config --global user.name "jayyei"
           git config --global user.email "sanchezrj0328@gmail.com"
-          ls
+          ls build
           mv -f build/ tmpBuild/
-          ls 
+          ls tmpBuild
           git stash
           git fetch
           git checkout -t origin/release-template
