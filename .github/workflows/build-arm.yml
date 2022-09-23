@@ -32,6 +32,7 @@ jobs:
           git stash
           git checkout -b release-template
           git add build/armTemplate/
+          git fetch
           git status
           git commit -m "save arm-template"
           git branch --set-upstream-to=origin/release-template release-template
