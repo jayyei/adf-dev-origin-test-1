@@ -32,7 +32,7 @@ jobs:
       - name: Delete linked services
         run: |
           ls build
-          # node build/delete-ls.js
+          node build/delete-ls.js
       
       - name: Save ARM template in repository
         run: |
