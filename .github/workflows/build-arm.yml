@@ -33,7 +33,8 @@ jobs:
         run: |
           git config --global user.name "jayyei"
           git config --global user.email "sanchezrj0328@gmail.com"
-          # mv -f /build /tmpBuild
+          ls
+          mv -f build/ tmpBuild/
           ls
           # git stash
           # git fetch
