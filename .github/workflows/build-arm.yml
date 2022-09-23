@@ -19,7 +19,9 @@ jobs:
               node --version
               npm --version
               npm install
+              
               ### 'run build validate $(Build.Repository.LocalPath)/<Root-folder-from-Git-configuration-settings-in-ADF> /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/<Your-ResourceGroup-Name>/providers/Microsoft.DataFactory/factories/<Your-Factory-Name>'
               npm run build validate ../ /subscriptions/05f19a32-57e6-4417-9d59-5e348bb90a19/resourceGroups/rg-build-adf-test-1/providers/Microsoft.DataFactory/factories/adf-dev-origin-test-1
+              
               ### 'run build export $(Build.Repository.LocalPath)/<Root-folder-from-Git-configuration-settings-in-ADF> /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/<Your-ResourceGroup-Name>/providers/Microsoft.DataFactory/factories/<Your-Factory-Name> "ArmTemplate"'
               npm run build export ../ /subscriptions/05f19a32-57e6-4417-9d59-5e348bb90a19/resourceGroups/rg-build-adf-test-1/providers/Microsoft.DataFactory/factories/adf-dev-origin-test-1 armTemplate
