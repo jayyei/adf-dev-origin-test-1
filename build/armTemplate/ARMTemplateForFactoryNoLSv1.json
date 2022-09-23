@@ -27,7 +27,7 @@
       "properties": {
         "activities": [
           {
-            "name": "Copy data of  two storages",
+            "name": "Copy data of  two storages 4343",
             "type": "Copy",
             "dependsOn": [],
             "policy": {
