@@ -40,7 +40,7 @@ jobs:
           git checkout -t origin/release-template
           mv -f tmpBuild/ build/
           rm -rf tmpBuild/
-          ls
+          git status
           # git add build/armTemplate/
           # git status
           # git commit -m "save arm-template"
