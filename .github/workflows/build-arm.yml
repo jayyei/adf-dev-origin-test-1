@@ -38,11 +38,9 @@ jobs:
           git fetch
           git checkout -t origin/release-template
           rm -rf build
-          mv -f armTemplate build/
-          echo "space"
-          ls 
-          # git status
-          # git add build/armTemplate/
+          mv -f armTemplate build/ 
+          git status
+          git add build/armTemplate/
           # git status
           # git commit -m "save arm-template"
           # git push
