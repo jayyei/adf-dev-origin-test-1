@@ -5,7 +5,7 @@
   // })
   
 var fs = require('fs')
-var template = require('build/armTemplate/ARMTemplateForFactory.json')
+var template = require('./armTemplate/ARMTemplateForFactory.json')
 
 console.log('Reading ARM Template')
 
@@ -20,7 +20,7 @@ template.resources = templateWithoutServices
 console.log("Overriding template")
 var jsonToWrite = JSON.stringify(template, null, 2)
 
-fs.writeFile('build/armTemplate/ARMTemplateForFactoryNoLSV1Node.json', jsonToWrite, (err) => {
+fs.writeFile('./armTemplate/ARMTemplateForFactoryNoLSV1Node.json', jsonToWrite, (err) => {
   if (err) throw err
   console.log('Linked Services were succesfully removed')
 })
