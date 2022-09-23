@@ -30,7 +30,9 @@ jobs:
               npm run build export ../ /subscriptions/05f19a32-57e6-4417-9d59-5e348bb90a19/resourceGroups/rg-build-adf-test-1/providers/Microsoft.DataFactory/factories/adf-dev-origin-test-1 armTemplate
       
       - name: Delete linked services
-        run: node build/delete-ls.js
+        run: |
+          ls build
+          # node build/delete-ls.js
       
       - name: Save ARM template in repository
         run: |
