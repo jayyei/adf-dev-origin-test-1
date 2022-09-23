@@ -37,10 +37,10 @@ jobs:
           mv -f build/ tmpBuild/
           rm -rf build
           ls
-          # git stash
-          # git fetch
-          # git checkout -t origin/release-template
-          # git status
+          git stash
+          git fetch
+          git checkout -t origin/release-template
+          git status
           # git add build/armTemplate/
           # git status
           # git commit -m "save arm-template"
