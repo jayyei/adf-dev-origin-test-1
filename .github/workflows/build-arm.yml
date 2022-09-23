@@ -37,7 +37,7 @@ jobs:
           git stash
           git fetch
           git checkout -t origin/release-template
-          rm -rf build
+          rm -rf build/armTemplate
           mv -f armTemplate build/armTemplate
           git status
           git add build/armTemplate/
