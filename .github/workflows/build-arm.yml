@@ -34,8 +34,8 @@ jobs:
           git config --global user.name "jayyei"
           git config --global user.email "sanchezrj0328@gmail.com"
           mv -f build/ tmpBuild/
-          ls build/
-          ls tmpBuild/
+          ls build
+          ls tmpBuild
           rm -rf build
           git stash
           git fetch
