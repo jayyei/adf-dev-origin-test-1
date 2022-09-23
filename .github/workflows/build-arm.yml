@@ -34,14 +34,16 @@ jobs:
           git config --global user.email "sanchezrj0328@gmail.com"
           git stash
           git fetch
-          git branch -v -a
-          git switch -f release-template
+          git checkout -t origin/release-template
           git status
           git add build/armTemplate/
           git status
           git commit -m "save arm-template"
           git push
 
+
+          # git branch -v -a
+          # git switch -f release-template
           # git checkout -b release-template
           # git branch --set-upstream-to=origin/release-template release-template
           # git config pull.rebase true
