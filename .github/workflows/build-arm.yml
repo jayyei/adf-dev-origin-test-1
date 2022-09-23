@@ -33,7 +33,7 @@ jobs:
           git checkout -b release-template
           git fetch
           git branch --set-upstream-to=origin/release-template release-template
-          git config pull.ff only 
+          git config pull.rebase true
           git pull
           git add build/armTemplate/
           git status
