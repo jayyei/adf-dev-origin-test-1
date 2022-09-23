@@ -33,7 +33,7 @@ jobs:
         working-directory: ./build
         run: |
           ls
-          node build/delete-ls.js
+          node delete-ls.js
       
       - name: Save ARM template in repository
         run: |
