@@ -49,17 +49,4 @@ jobs:
           git status
           git commit -m "save arm-template"
           git push
-
-          # find tmpBuild -type f -print0 | xargs -0 mv -f build/armTemplate
-          # find tmpBuild -maxdepth 1 -type f -print0 | xargs -0 mv -f build
-          # git branch -v -a
-          # git switch -f release-template
-          # git checkout -b release-template
-          # git branch --set-upstream-to=origin/release-template release-template
-          # git config pull.rebase true
-          # git pull
-          # git add build/armTemplate/
-          # git status
-          # git commit -m "save arm-template"
-          # git push
           
