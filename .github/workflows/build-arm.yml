@@ -38,7 +38,7 @@ jobs:
           git fetch
           git checkout -t origin/release-template
           rm -rf build
-          mv -f armTemplate build/ 
+          mv -f armTemplate build/armTemplate
           git status
           git add build/armTemplate/
           # git status
