@@ -35,7 +35,7 @@ jobs:
           git stash
           git fetch
           git branch -v -a
-          git switch release-template
+          git switch -f release-template
           git status
           git add build/armTemplate/
           git status
