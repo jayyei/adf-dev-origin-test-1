@@ -31,10 +31,11 @@ jobs:
           git config --global user.email "sanchezrj0328@gmail.com"
           git stash
           git checkout -b release-template
-          git add build/armTemplate/
           git fetch
+          git branch --set-upstream-to=origin/release-template release-template
+          git pull
+          git add build/armTemplate/
           git status
           git commit -m "save arm-template"
-          git branch --set-upstream-to=origin/release-template release-template
           git push
           
