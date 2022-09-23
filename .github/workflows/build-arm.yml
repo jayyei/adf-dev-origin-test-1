@@ -32,6 +32,7 @@ jobs:
       - name: Delete linked services
         run: |
           ls build
+          npm install
           node build/delete-ls.js
       
       - name: Save ARM template in repository
