@@ -29,9 +29,11 @@ jobs:
         run: |
           git config --global user.name "jayyei"
           git config --global user.email "sanchezrj0328@gmail.com"
-          git branch
+          git stash
+          git checkout -b release-template
           git add build/armTemplate/
           git status
-          git commit -m "saving arm-template"
-          git push origin release:release-template
+          git commit -m "save arm-template"
+          git branch --set-upstream-to=origin/release-template release-template
+          git push
           
