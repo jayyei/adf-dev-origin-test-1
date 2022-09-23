@@ -33,15 +33,16 @@ jobs:
         run: |
           git config --global user.name "jayyei"
           git config --global user.email "sanchezrj0328@gmail.com"
+          ls
           mv -f build/ tmpBuild/
-          ls tmpBuild
+          ls 
           git stash
           git fetch
           git checkout -t origin/release-template
-          find tmpBuild -type f -print0 | xargs -0 mv -t build
+          # find tmpBuild -type f -print0 | xargs -0 mv -t build
           # mv -f tmpBuild/ build/
-          ls 
-          git status
+          # ls 
+          # git status
           # git add build/armTemplate/
           # git status
           # git commit -m "save arm-template"
