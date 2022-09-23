@@ -37,6 +37,8 @@ jobs:
           git branch -v -a
           git switch release-template
           git status
+          git add build/armTemplate/
+          git status
 
           # git checkout -b release-template
           # git branch --set-upstream-to=origin/release-template release-template
