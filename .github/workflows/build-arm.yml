@@ -41,6 +41,7 @@ jobs:
           # find tmpBuild -type f -print0 | xargs -0 mv -f build
           # mv -f tmpBuild/ build/
           ls build
+          echo "space"
           ls tmpBuild
           # git status
           # git add build/armTemplate/
