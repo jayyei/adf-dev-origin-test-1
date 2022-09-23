@@ -13,7 +13,7 @@
 				"fileName": "test.txt",
 				"container": "input"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": ";",
 			"escapeChar": "\\",
 			"quoteChar": "\""
 		},
