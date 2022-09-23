@@ -39,6 +39,8 @@ jobs:
           git status
           git add build/armTemplate/
           git status
+          git commit -m "save arm-template"
+          git push
 
           # git checkout -b release-template
           # git branch --set-upstream-to=origin/release-template release-template
