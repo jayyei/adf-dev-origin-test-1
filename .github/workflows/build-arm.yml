@@ -62,7 +62,10 @@ jobs:
           rm -rf build/armTemplate
           mv -f armTemplate build/armTemplate
           git add build/armTemplate/
+          if [ -n "$(git diff --staged)" ]; then  
           git status
           git commit -m "save arm-template"
-          git push
+          git push ;
+          else   echo "no changes";
+          fi
           
