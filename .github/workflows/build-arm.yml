@@ -8,6 +8,9 @@ jobs:
   build-arm-template:
     runs-on: ubuntu-latest
     
+    environment:
+      name: PRE
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -35,6 +38,18 @@ jobs:
         run: |
           ls
           node delete-ls.js
+          
+      # install Az PowerShell module (necesaria para ejecutar los pre y post scripts)
+      - name: Install Az PoweShell module
+        run: Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force 
+        shell: pwsh
+        
+      # Log into Azure ( habilita la sesion en powershell para poder ejecutar los scripts)
+      - name: Log into Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZ_CREDENTIALS }}
+          enable-AzPSSession: true 
       
       - name: Save ARM template in repository
         run: |
