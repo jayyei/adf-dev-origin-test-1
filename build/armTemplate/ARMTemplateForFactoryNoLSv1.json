@@ -116,10 +116,7 @@
             "type": "String"
           }
         ]
-      },
-      "dependsOn": [
-        "[concat(variables('factoryId'), '/linkedServices/LS_02_ST_01')]"
-      ]
+      }
     },
     {
       "name": "[concat(parameters('factoryName'), '/DATA_SET_02_ST_02')]",
@@ -142,10 +139,7 @@
           "quoteChar": "\""
         },
         "schema": []
-      },
-      "dependsOn": [
-        "[concat(variables('factoryId'), '/linkedServices/LS_03_ST_02')]"
-      ]
+      }
     }
   ]
 }
