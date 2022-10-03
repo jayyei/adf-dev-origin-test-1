@@ -16,6 +16,17 @@ var templateWithoutServices = template.resources.filter(
 console.log("Removing linked services")
 template.resources = templateWithoutServices
 
+var resourcesWithoutDependencies = template.resources.map(resource => {
+  let editedResource = resource
+  resource.dependsOn.forEach(dependency => {
+    if (dependency.search('linkedServices') !== -1) {
+      delete editedResource.dependsOn
+    }
+  });
+  return editedResource
+})
+
+template.resources = resourcesWithoutDependencies;
 
 console.log("Overriding template")
 var jsonToWrite = JSON.stringify(template, null, 2)
