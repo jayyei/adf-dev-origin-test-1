@@ -58,7 +58,7 @@ jobs:
           subscriptionId: ${{ secrets.AZ_SUBSCRIPTION_ID }}
           resourceGroupName: rg-destination
           template: build/armTemplate/ARMTemplateForFactoryNoLSv1.json
-          parameters: build/armTemplate/ARMTemplateParametersForFactory.json
+          parameters: build/armTemplate/ARMTemplateParametersForFactory.json factoryName=dest-dt-factory 
           failOnStdErr: false 
           
       - name: Save ARM template in repository
