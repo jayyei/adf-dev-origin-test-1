@@ -51,6 +51,16 @@ jobs:
           creds: ${{ secrets.AZ_CREDENTIALS }}
           enable-AzPSSession: true 
       
+      # Deploy ARM template
+      - name: Run ARM deploy
+        uses: azure/arm-deploy@v1
+        with:
+          subscriptionId: ${{ secrets.AZ_SUBSCRIPTION_ID }}
+          resourceGroupName: rg-destination
+          template: build/armTemplate/ARMTemplateForFactoryNoLSv1.json
+          parameters: build/armTemplate/ARMTemplateParametersForFactory.json
+          failOnStdErr: false 
+          
       - name: Save ARM template in repository
         run: |
           git config --global user.name "jayyei"
