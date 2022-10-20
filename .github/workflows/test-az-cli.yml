@@ -16,12 +16,9 @@ jobs:
           python --version
 
       - name: Testing azure cli
-        run: |
-          cd build/armTemplate
-          echo "despues del directorio"
-          az login --service-principal -u ab4f0b40-4de8-4e70-a867-a62bf520c662 -p UYf8Q~6dMxYaM4Pi1CFMD2zehxCpzj-sv-pThbed --tenant cd949535-b8e0-4d65-b847-7327e929a415
-          az deployment group validate \
-            --resource-group rg-destination \
-            --template-file ARMTemplateForFactory.json \
-            --parameters factoryName=mexd2zu1adfcrmmexcomm001 -o json \
-            --mode Incremental
+        with:
+          azPSVersion: 'latest'
+          inlinescript: |
+            cd build/armTemplate
+            az login --service-principal -u ab4f0b40-4de8-4e70-a867-a62bf520c662 -p UYf8Q~6dMxYaM4Pi1CFMD2zehxCpzj-sv-pThbed --tenant cd949535-b8e0-4d65-b847-7327e929a415
+            az deployment group validate --resource-group rg-destination --template-file ARMTemplateForFactory.json --parameters factoryName=mexd2zu1adfcrmmexcomm001 -o json --mode Incremental
