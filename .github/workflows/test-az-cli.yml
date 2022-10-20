@@ -9,15 +9,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-        
+
       - name: Testing azure cli
         run: |
           ls
           cd build/armTemplate
           echo "despues del directorio"
-          az login --service-principal -u fc80ce67-d9d4-4641-b30a-871a3756d4dd -p ${{ secrets.SECRETID }} --tenant 35595a02-4d6d-44ac-99e1-f9ab4cd872db
-          az deployment group validate \
-            --resource-group mexd2zu1rsgccoemxcrit002 \
-            --template-file ARMTemplateForFactoryTestV2.json \
+          az login --service-principal -u ab4f0b40-4de8-4e70-a867-a62bf520c662 -p UYf8Q~6dMxYaM4Pi1CFMD2zehxCpzj-sv-pThbed --tenant cd949535-b8e0-4d65-b847-7327e929a415
+            --resource-group rg-destination \
+            --template-file ARMTemplateForFactory.json \
             --parameters factoryName=mexd2zu1adfcrmmexcomm001 -o json \
             --mode Incremental
