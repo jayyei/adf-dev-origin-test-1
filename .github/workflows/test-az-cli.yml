@@ -27,7 +27,6 @@ jobs:
 
       # install Az PowerShell module (necesaria para ejecutar los pre y post scripts)
       - name: Install Az PoweShell module
-        if: false
         run: Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force 
         shell: pwsh
       
