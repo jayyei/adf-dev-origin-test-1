@@ -16,7 +16,6 @@ jobs:
           python --version
 
       - name: Testing azure cli
-        uses: azure/powershell@v1
         with:
           azPSVersion: 'latest'
           inlinescript: |
