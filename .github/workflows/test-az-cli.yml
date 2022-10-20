@@ -1,0 +1,20 @@
+on:
+  push:
+    branches:
+      - release
+jobs:
+  test-az-cli-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Testing azure cli
+        run: |
+          ls
+          cd build/armTemplate
+          echo "despues del directorio"
+          az login --service-principal -u fc80ce67-d9d4-4641-b30a-871a3756d4dd -p ${{ secrets.SECRETID }} --tenant 35595a02-4d6d-44ac-99e1-f9ab4cd872db
+          az deployment group validate \
+            --resource-group mexd2zu1rsgccoemxcrit002 \
+            --template-file ARMTemplateForFactoryTestV2.json \
+            --parameters factoryName=mexd2zu1adfcrmmexcomm001 -o json \
+            --mode Incremental

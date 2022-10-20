@@ -6,6 +6,7 @@ on:
 jobs:
 
   build-arm-template:
+    if: false
     runs-on: ubuntu-latest
     
     environment:
